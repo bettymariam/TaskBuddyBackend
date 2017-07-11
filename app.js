@@ -8,6 +8,10 @@ var hbs = require('hbs')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var members = require('./routes/members');
+var tasks = require('./routes/tasks');
+var rewards = require('./routes/rewards');
+var mrewards = require('./routes/mrewards');
 
 var app = express();
 
@@ -25,6 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/tasks', users);
+app.use('/members', users);
+app.use('/rewards', users);
+app.use('/mrewards', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

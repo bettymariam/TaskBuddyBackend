@@ -4,7 +4,7 @@ var knex = require('../db')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  knex('users')
+  knex('tasks')
     .then(user => res.json(user))
   .catch(err => next(err))
 });
