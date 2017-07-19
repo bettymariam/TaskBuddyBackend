@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
           id: 1,
           task_id: 1,
           member_id: 1,
-          completed_count: 0,
+          completed_count: 1,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
        },
@@ -16,12 +16,28 @@ exports.seed = function(knex, Promise) {
           id: 2,
           task_id: 1,
           member_id: 2,
-          completed_count: 0,
+          completed_count: 2,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
        },
        {
           id: 3,
+          task_id: 1,
+          member_id: 3,
+          completed_count: 0,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+       },
+       {
+          id: 4,
+          task_id: 1,
+          member_id: 4,
+          completed_count: 0,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+       },
+       {
+          id: 5,
           task_id: 2,
           member_id: 1,
           completed_count: 0,
@@ -29,10 +45,18 @@ exports.seed = function(knex, Promise) {
           updated_at: new Date('2017-07-11 14:26:16 UTC')
         },
         {
-          id: 4,
+          id: 6,
           task_id: 3,
           member_id: 2,
           completed_count: 0,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+        },
+        {
+          id: 7,
+          task_id: 2,
+          member_id: 3,
+          completed_count: 1,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
          }

@@ -8,6 +8,7 @@ exports.up = function(knex) {
     table.boolean('reward').notNullable()
     table.integer('status_id').notNullable()
     table.dateTime('start_date').notNullable()
+    table.boolean('house_task').notNullable()
     table.integer('points').notNullable()
     table.timestamps(true, true)
   })

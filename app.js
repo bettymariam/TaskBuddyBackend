@@ -19,18 +19,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
-//app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 //app.use(express.static(path.join(__dirname, 'build')));
 
+app.use('*', function(req, res, next) {
+  console.log(req.baseUrl);
+  next();
+})
 app.use('/', index);
 app.use('/users', users);
-app.use('/tasks', users);
-app.use('/members', users);
-app.use('/rewards', users);
-app.use('/mrewards', users);
+app.use('/tasks', tasks);
+app.use('/members', members);
+app.use('/rewards', rewards);
+app.use('/mrewards', mrewards);
 
 // app.use('*', function(req, res) {
 //   res.sendFile('index.html')

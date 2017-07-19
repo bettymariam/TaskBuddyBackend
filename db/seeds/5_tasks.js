@@ -12,6 +12,7 @@ exports.seed = function(knex, Promise) {
           status_id: 1,
           start_date: '2017-07-11',
           points: 5,
+          house_task: true,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
        },
@@ -23,6 +24,7 @@ exports.seed = function(knex, Promise) {
          status_id: 1,
          start_date: '2017-07-11',
          points: 5,
+         house_task: false,
          created_at: new Date('2017-07-11 14:26:16 UTC'),
          updated_at: new Date('2017-07-11 14:26:16 UTC')
        },
@@ -34,6 +36,7 @@ exports.seed = function(knex, Promise) {
          status_id: 1,
          start_date: '2017-07-11',
          points: 5,
+         house_task: false,
          created_at: new Date('2017-07-11 14:26:16 UTC'),
          updated_at: new Date('2017-07-11 14:26:16 UTC')
         }

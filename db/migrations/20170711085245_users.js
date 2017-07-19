@@ -5,7 +5,7 @@ exports.up = function(knex) {
     table.increments()
     table.varchar('username',50).notNullable()
     table.varchar('email',50).notNullable()
-    table.string('refresh_token').notNullable()
+    table.text('refresh_token').notNullable()
     table.timestamps(true, true)
   })
 }

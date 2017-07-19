@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
           id: 1,
           name: "Betty",
           user_id: 1,
-          points: 0,
+          points: 5,
           email: 'bettymariam@gmail.com',
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
@@ -17,11 +17,29 @@ exports.seed = function(knex, Promise) {
           id: 2,
           name: "Tom",
           user_id: 1,
-          points: 0,
+          points: 5,
           email: '',
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
-        }
+        },
+        {
+           id: 3,
+           name: "Rhea",
+           user_id: 1,
+           points: 0,
+           email: '',
+           created_at: new Date('2017-07-11 14:26:16 UTC'),
+           updated_at: new Date('2017-07-11 14:26:16 UTC')
+         },
+         {
+            id: 4,
+            name: "Ryan",
+            user_id: 1,
+            points: 0,
+            email: '',
+            created_at: new Date('2017-07-11 14:26:16 UTC'),
+            updated_at: new Date('2017-07-11 14:26:16 UTC')
+          }
       ]);
     })
     .then(() => {

@@ -4,15 +4,12 @@ var passport = require('passport');
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var AmazonStrategy = require('passport-amazon').Strategy;
 var knex = require('../db')
+var cookieParser = require('cookie-parser');
 
-console.log("in users")
-
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log('in /users');
-  // knex('users')
-  //   .then(user => res.json(user))
-  // .catch(err => next(err))
+  knex('users')
+    .then(user => res.json(user))
+  .catch(err => next(err))
 });
 
 passport.use(new AmazonStrategy({
@@ -21,36 +18,59 @@ passport.use(new AmazonStrategy({
     callbackURL: "http://localhost:3000/users/auth/amazon/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(accessToken, refreshToken, profile)
-  //   User.findOrCreate({ amazonId: profile.id }, function (err, user) {
-  //     return done(err, user);
-  //   });
-   return done(null, {accessToken, refreshToken, profile})
+    var email = profile._json.email;
+    var username = profile._json.name;
+
+  knex('users')
+    .select('*')
+    .where({email})
+    .then(user => {
+      console.log("user", user);
+      let new_user = {
+        username: username,
+        email: email,
+        refresh_token: refreshToken
+      }
+      if (user.length === 0){
+        knex('users')
+          .insert(new_user)
+          .returning('*')
+          .then(user => {
+            return done(null, user)
+          })
+          .catch(err => console.log(err))
+      } else {
+        return done(null, user)
+      }
+    })
+    .catch(err => console.log(err))
   }
 ));
 
 router.use(passport.initialize());
 router.use(passport.session());
+router.use(cookieParser());
 
 passport.serializeUser((object, done) => {
   console.log("in Serialize", object);
-  done(null, {token : object.token})
+  done(null, {token : object.token});
 })
 
 passport.deserializeUser((object, done) => {
-  console.log("in DeSerialize", object);
   done(null, object)
 })
 
-
 router.get('/auth/amazon',
-  passport.authenticate('amazon', { scope: 'profile'}), function(req,res){
-    console.log("to amazon")
-  });
+  passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: 'http://localhost:3001/dashboard', failureRedirect: 'http://localhost:3001' })
+  passport.authenticate('amazon', { successRedirect: 'http://localhost:3001', failureRedirect: 'http://localhost:3000'})
 );
+
+router.get('/login', function(req,res){
+  console.log("in login", req.session)
+  res.json({user_id: 'hghjgh'})
+})
 
 
 module.exports = router;
