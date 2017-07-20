@@ -64,7 +64,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: 'https://localhost:3001', failureRedirect: 'http://localhost:3000'})
+  passport.authenticate('amazon', { successRedirect: 'http://ec2-34-228-167-70.compute-1.amazonaws.com:3001/', failureRedirect: 'http://ec2-34-228-167-70.compute-1.amazonaws.com:3002/'})
 );
 
 router.get('/login', function(req,res){
