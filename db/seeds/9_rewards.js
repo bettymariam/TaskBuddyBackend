@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('rewards').del()
@@ -17,7 +16,14 @@ exports.seed = function(knex, Promise) {
           points_needed: 10,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
-        }
+        },
+        {
+           id: 3,
+           name: "Good going kids, you've earned a Netflix movie",
+           points_needed: 15,
+           created_at: new Date('2017-07-11 14:26:16 UTC'),
+           updated_at: new Date('2017-07-11 14:26:16 UTC')
+         }
       ]);
     })
     .then(() => {

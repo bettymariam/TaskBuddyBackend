@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('members').del()
@@ -8,7 +7,7 @@ exports.seed = function(knex, Promise) {
           id: 1,
           name: "Betty",
           user_id: 1,
-          points: 5,
+          points: 15,
           email: 'bettymariam@gmail.com',
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
@@ -17,7 +16,7 @@ exports.seed = function(knex, Promise) {
           id: 2,
           name: "Tom",
           user_id: 1,
-          points: 5,
+          points: 10,
           email: '',
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
@@ -26,7 +25,7 @@ exports.seed = function(knex, Promise) {
            id: 3,
            name: "Rhea",
            user_id: 1,
-           points: 0,
+           points: 5,
            email: '',
            created_at: new Date('2017-07-11 14:26:16 UTC'),
            updated_at: new Date('2017-07-11 14:26:16 UTC')
@@ -35,7 +34,7 @@ exports.seed = function(knex, Promise) {
             id: 4,
             name: "Ryan",
             user_id: 1,
-            points: 0,
+            points: 5,
             email: '',
             created_at: new Date('2017-07-11 14:26:16 UTC'),
             updated_at: new Date('2017-07-11 14:26:16 UTC')

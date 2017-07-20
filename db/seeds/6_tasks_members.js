@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('tasks_members').del()
@@ -59,7 +58,23 @@ exports.seed = function(knex, Promise) {
           completed_count: 1,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
-         }
+         },
+         {
+           id: 8,
+           task_id: 4,
+           member_id: 3,
+           completed_count: 1,
+           created_at: new Date('2017-07-11 14:26:16 UTC'),
+           updated_at: new Date('2017-07-11 14:26:16 UTC')
+         },
+         {
+           id: 9,
+           task_id: 4,
+           member_id: 4,
+           completed_count: 1,
+           created_at: new Date('2017-07-11 14:26:16 UTC'),
+           updated_at: new Date('2017-07-11 14:26:16 UTC')
+          }
       ]);
     })
     .then(() => {
