@@ -7,6 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('tasks').insert([{
           id: 1,
           name: "Vaccum the carpets",
+          user_id: 1,
           frequency_id: 2,
           reward: true,
           status_id: 1,
@@ -19,6 +20,7 @@ exports.seed = function(knex, Promise) {
        {
          id: 2,
          name: "20 minutes of yoga",
+         user_id: 1,
          frequency_id: 1,
          reward: true,
          status_id: 1,
@@ -31,6 +33,7 @@ exports.seed = function(knex, Promise) {
        {
          id: 3,
          name: "Pay electricity & gas bill",
+         user_id: 1,
          frequency_id: 3,
          reward: false,
          status_id: 1,

@@ -9,6 +9,25 @@ router.get('/', function(req, res, next) {
   .catch(err => next(err))
 });
 
+router.get('/alexa', function(req, res, next) {
+  const id = req.query.id;
+  const frequency = req.query.frequency;
+  console.log(id,frequency)
+
+  knex('tasks')
+    .innerJoin('frequency', 'frequency.id', 'tasks.frequency_id')
+    .innerJoin('status', 'status.id', 'tasks.status_id')
+    .select('tasks.name as taskname', 'frequency.name as frequencyname')
+    .whereRaw("LOWER(frequency.name) LIKE '%' || LOWER(?) || '%' ", frequency)
+    .andWhere('tasks.user_id', id)
+    .andWhere('tasks.house_task', 'true')
+    .whereIn('status.name', ['Started', 'In progress'])
+    .then(tasks => {
+      res.json(tasks)
+    })
+  .catch(err => next(err))
+});
+
 router.get('/:id', function(req, res, next) {
   const id = req.params.id;
   const task_details = {};
