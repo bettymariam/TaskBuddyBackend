@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('rewards').insert([{
           id: 1,
           name: "You get 1 hour of uninterrupted TV time of your choice",
-          points_needed: 3,
+          points_needed: 5,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
        },

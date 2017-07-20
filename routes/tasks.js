@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
   .catch(err => next(err))
 });
 
-router.get('/alexa', function(req, res, next) {
-  const id = req.query.id;
+router.get('/alexa/:id', function(req, res, next) {
+  const id = req.params.id;
   const frequency = req.query.frequency;
   console.log(id,frequency)
 
@@ -46,11 +46,48 @@ router.get('/:id', function(req, res, next) {
       .where('tasks_members.task_id',id)
       .then(members => {
         task_details.members = members;
-        console.log(task_details)
         res.json(task_details)
       })
     })
     .catch(err => next(err))
+});
+
+router.get('/count/:id', function(req, res, next) {
+  //var user = req.session.user.id;
+  let id = req.params.id;
+  let name = req.query.name;
+  let taskname = req.query.taskname;
+
+  knex('members')
+    .select('members.name as membername', 'tasks.name as taskname', 'completed_count as count')
+    .innerJoin('tasks_members', 'tasks_members.member_id', 'members.id')
+    .innerJoin('tasks', 'tasks.id', 'tasks_members.task_id')
+    .innerJoin('status','status.id', 'tasks.status_id')
+    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
+    .whereRaw("LOWER(tasks.name) LIKE '%' || LOWER(?) || '%'", taskname)
+    .andWhere('members.user_id', id)
+    .whereIn('status.name', ['Started', 'In progress'])
+    .then(member => res.json(member))
+  .catch(err => next(err))
+});
+
+router.get('/count/:id', function(req, res, next) {
+  //var user = req.session.user.id;
+  let id = req.params.id;
+  let name = req.query.name;
+  let taskname = req.query.taskname;
+
+  knex('members')
+    .select('members.name as membername', 'tasks.name as taskname', 'completed_count as count')
+    .innerJoin('tasks_members', 'tasks_members.member_id', 'members.id')
+    .innerJoin('tasks', 'tasks.id', 'tasks_members.task_id')
+    .innerJoin('status','status.id', 'tasks.status_id')
+    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
+    .whereRaw("LOWER(tasks.name) LIKE '%' || LOWER(?) || '%'", taskname)
+    .andWhere('members.user_id', id)
+    .whereIn('status.name', ['Started', 'In progress'])
+    .then(member => res.json(member))
+  .catch(err => next(err))
 });
 
 module.exports = router;
