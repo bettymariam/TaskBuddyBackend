@@ -17,6 +17,11 @@
     "knex": "^0.13.0",
     "pg": "^6.4.0",
     "dotenv": "^4.0.0"
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-amazon": "^1.0.0",
+    "passport-oauth": "^1.0.0",
+    "pg": "^6.4.0"
   },
   "devDependencies": {
     "morgan": "^1.8.2",
