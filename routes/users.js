@@ -3,8 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var AmazonStrategy = require('passport-amazon').Strategy;
-var knex = require('../db')
+var knex = require('../db');
 var cookieParser = require('cookie-parser');
+console.log(process.env.SERVER_URL);
 
 router.get('/', function(req, res, next) {
   knex('users')
@@ -64,7 +65,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: 'http://ec2-34-228-167-70.compute-1.amazonaws.com:3001/', failureRedirect: 'http://ec2-34-228-167-70.compute-1.amazonaws.com:3002/'})
+  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}3001/`, failureRedirect: `${process.env.SERVER_URL}3002/`})
 );
 
 router.get('/login', function(req,res){
