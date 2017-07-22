@@ -1,6 +1,60 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<form action="/users/auth/amazon">
-  <button class="primary" id="LoginWithAmazon" onclick="login()"><img alt="Login with Amazon" src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png" width="156" height="32"></button>
-</form>
-</button>
+<div class="wrapper dark-header">
+  <header class="main-header">
+    <div class="logo"><a href="index.html" >Task Buddy</a></div>
+    <div class="navbar navbar-static-top">
+
+    </div>
+
+  </header>
+  <section class="login-inner">
+    <div class="login-middle">
+      <div class="login-details">
+        <form>
+          <h2>Log In</h2>
+          <label>
+            <input type="text" placeholder="Email address"/>
+          </label>
+          <label>
+            <input type="text" placeholder="Phone Number"/>
+          </label>
+          <label>
+            <input type="password" placeholder="Password"/>
+          </label>
+          <label>
+            <input type="checkbox"/><span>Remember me</span>
+          </label>
+          <div class="btn-sub">
+            <button class="pink-btn">Log In</button>
+            <span>
+              <a href="#">Forget your password?</a>
+            </span>
+          </div>
+
+        </form>
+        <form action="/users/auth/amazon">
+          <button class="primary" id="LoginWithAmazon" onclick="login()"><img alt="Login with Amazon" src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png" width="156" height="32"></button>
+        </form>
+        </button>
+      </div>
+<!-- <div class="custom_body">
+   <h1>Task Buddy</h1>
+    <div class="container">
+    	<div class="row">
+    	    <div class="login_box">
+    	        <section class="main-box">
+        	        <form>
+        	        <div class="input-box">
+            	        <span class="input-group-addon i_icon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="email" type="text" class="form-control input_layout" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-box">
+            	         <span class="input-group-addon i_icon"><i class="glyphicon glyphicon-lock"></i></span>
+                         <input id="password" type="password" class="form-control input_layout" name="password" placeholder="Password">
+                    </div>
+                    </form>
+                    <button type="button" class="btn btn-default btn_style">LOGIN</button>
+                </section>
+    	    </div>
+    	</div>
+    </div>
+</div> -->

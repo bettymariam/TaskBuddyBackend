@@ -31,4 +31,57 @@ router.get('/tasks/:id', function(req, res, next) {
   .catch(err => next(err))
 });
 
+//check if a member is assigned to a task
+router.get('/:id/task', function(req, res, next) {
+
+  var name =req.query.member_name
+  let taskId = req.query.task_id;
+
+  knex('tasks_members')
+    .innerJoin('members', 'members.id', 'tasks_members.member_id')
+    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
+    .andWhere('tasks_members.task_id', taskId)
+    .then(result => res.json(result[0]))
+  .catch(err => next(err))
+});
+
+router.post('/', function(req, res, next) {
+  var memberId = req.params.id;
+  var points = req.query.points
+
+  knex('members')
+    .where('members.id', memberId)
+    .update('members.points', points)
+    .then(member => res.json(member))
+  .catch(err => next(err))
+});
+
+router.post('/:id', function(req, res, next) {
+  var userId = req.params.id;
+  var newMember = {
+    name: req.body.name,
+    user_id: userId,
+    points: 0,
+    email: req.body.email
+  }
+
+  knex('members')
+    .insert({newMember})
+    .then(member => res.json(member))
+  .catch(err => next(err))
+});
+
+
+router.post('/:id/addpoints', function(req, res, next) {
+  var memberId = req.params.id;
+  var points = req.query.points
+
+  knex('members')
+    .where('members.id', memberId)
+    .update('members.points', points)
+    .then(member => res.json(member))
+  .catch(err => next(err))
+});
+
+
 module.exports = router;
