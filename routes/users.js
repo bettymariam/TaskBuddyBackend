@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 passport.use(new AmazonStrategy({
     clientID: 'amzn1.application-oa2-client.c7b9f74d21e541a1bafeef9d840f751b',
     clientSecret: 'caf34051ce6b53faae20f5f547472709629e75fbc2347034286746f98707188a',
-    callbackURL: "http://localhost:3002/users/auth/amazon/callback"
+    callbackURL: `${process.env.SERVER_URL}3002/users/auth/amazon/callback`
   },
   function(accessToken, refreshToken, profile, done) {
     var email = profile._json.email;
