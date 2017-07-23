@@ -65,7 +65,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}3001/`, failureRedirect: `${process.env.SERVER_URL}3002/`})
+  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}3001/`, failureRedirect: `${process.env.SERVER_URL}/`})
 );
 
 router.get('/login', function(req,res){
