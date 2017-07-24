@@ -18,6 +18,20 @@ router.get('/eligible', function(req, res, next) {
     .catch(err => next(err))
 });
 
+router.post('/claim', function(req, res, next) {
+  console.log("in claim");
+  var newReward = {
+    member_id: req.query.member_id,
+    reward_id: req.query.reward_id
+  }
+
+  knex('claimed_rewards')
+    .insert(newReward)
+    .returning('*')
+    .then(reward =>  res.json(reward))
+  .catch(err => next(err))
+});
+
 
 router.post('/:id', function(req, res, next) {
   var userId = req.params.id;
@@ -33,18 +47,6 @@ router.post('/:id', function(req, res, next) {
   .catch(err => next(err))
 });
 
-router.post('/claim', function(req, res, next) {
 
-  var newReward = {
-    member_id: req.query.member_id,
-    reward_id: req.query.reward_id
-  }
-
-  knex('claimed_rewards')
-    .insert({newReward})
-    .returning('*')
-    .then(reward => res.json(reward))
-  .catch(err => next(err))
-});
 
 module.exports = router;

@@ -63,9 +63,6 @@ button {
 }
 
 
-
-
-
 /* Login Page */
 .dark-header {background: #f2f0f1;}
 .dark-header header{background: #303030; position: absolute; width: 100%;	}
@@ -82,7 +79,7 @@ input:focus, input:hover{outline: none;}
 .btn-sub span a, .btn-sub span a:hover{color: #000; font-size: 15px;}
 .btn-sub button {border-bottom: 2px solid #b2534f;box-shadow: none;border-radius: 3px; width: 145px;}
 .btn-sub button:hover{background:#b2534f; border-radius: 3px; box-shadow: none;}
-.login-details {max-width: 666px;margin: 0 auto;background: #fff;padding: 35px;border-radius: 7px; box-shadow: 0 0 7px rgba(0,0,0,0.1);}
+.login-details {max-width: 666px;margin: 0 auto; margin-top: 100px; background: #fff;padding: 35px;border-radius: 7px; box-shadow: 0 0 7px rgba(0,0,0,0.1);}
 .login-inner {height: 100%;display: table;width: 100%;}
 .btn-sub span{margin-left: 25px;}
 
@@ -90,6 +87,7 @@ input:focus, input:hover{outline: none;}
  @media (max-width:767px) {
 /*KK*/
 .login-middle {display: block;height: auto;padding: 15px;}
+.login-details {margin: auto;}
 .dark-header header {position: relative;}
 .btn-grps .pink-btn {height: 35px;display: inline-block;line-height: 35px;margin-left: 15px;max-width: 200px;display: block;text-align: center;margin:0px auto 13px}
 .btn-grps {float: left !Important;width: 100%;}

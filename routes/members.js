@@ -24,7 +24,7 @@ router.get('/tasks/:id', function(req, res, next) {
     .innerJoin('tasks', 'tasks.id', 'tasks_members.task_id')
     .innerJoin('frequency', 'frequency.id', 'tasks.frequency_id')
     .innerJoin('status','status.id', 'tasks.status_id')
-    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
+    .whereRaw("LOWER(members.name) = ?", name)
     .andWhere('members.user_id', id)
     .whereIn('status.name', ['Started', 'In progress'])
     .then(member => res.json(member))
@@ -39,24 +39,13 @@ router.get('/:id/task', function(req, res, next) {
 
   knex('tasks_members')
     .innerJoin('members', 'members.id', 'tasks_members.member_id')
-    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
+    .whereRaw("LOWER(members.name) = ?", name)
     .andWhere('tasks_members.task_id', taskId)
     .then(result => res.json(result[0]))
   .catch(err => next(err))
 });
 
-router.post('/', function(req, res, next) {
-  var memberId = req.params.id;
-  var points = req.query.points
-
-  knex('members')
-    .where('members.id', memberId)
-    .update('members.points', points)
-    .then(member => res.json(member))
-  .catch(err => next(err))
-});
-
-router.post('/:id', function(req, res, next) {
+router.post('/:id/new', function(req, res, next) {
   var userId = req.params.id;
   var newMember = {
     name: req.body.name,
@@ -66,11 +55,10 @@ router.post('/:id', function(req, res, next) {
   }
 
   knex('members')
-    .insert({newMember})
+    .insert(newMember)
     .then(member => res.json(member))
   .catch(err => next(err))
 });
-
 
 router.post('/:id/addpoints', function(req, res, next) {
   var memberId = req.params.id;
@@ -78,9 +66,10 @@ router.post('/:id/addpoints', function(req, res, next) {
 
   knex('members')
     .where('members.id', memberId)
-    .update('members.points', points)
+    .increment('points', points)
+    .returning('*')
     .then(member => res.json(member))
-  .catch(err => next(err))
+    .catch(err => next(err))
 });
 
 

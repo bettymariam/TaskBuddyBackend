@@ -17,14 +17,11 @@ router.get('/alexa/:id', function(req, res, next) {
     .innerJoin('frequency', 'frequency.id', 'tasks.frequency_id')
     .innerJoin('status', 'status.id', 'tasks.status_id')
     .select('tasks.name as taskname', 'frequency.name as frequencyname')
-    .whereRaw("LOWER(frequency.name) LIKE '%' || LOWER(?) || '%' ", frequency)
+    .whereRaw("LOWER(frequency.name) = ?", frequency)
     .andWhere('tasks.user_id', id)
     .andWhere('tasks.house_task', 'true')
     .whereIn('status.name', ['Started', 'In progress'])
-    .then(tasks => {
-      console.log(tasks);
-      res.json(tasks)
-    })
+    .then(tasks =>  res.json(tasks))
   .catch(err => next(err))
 });
 
@@ -63,8 +60,8 @@ router.get('/count/:id', function(req, res, next) {
     .innerJoin('tasks_members', 'tasks_members.member_id', 'members.id')
     .innerJoin('tasks', 'tasks.id', 'tasks_members.task_id')
     .innerJoin('status','status.id', 'tasks.status_id')
-    .whereRaw("LOWER(members.name) LIKE '%' || LOWER(?) || '%'", name)
-    .whereRaw("LOWER(tasks.name) LIKE '%' || LOWER(?) || '%'", taskname)
+    .whereRaw("LOWER(members.name) = ?", name)
+    .whereRaw("LOWER(tasks.name) = ?", taskname)
     .andWhere('members.user_id', id)
     .whereIn('status.name', ['Started', 'In progress'])
     .then(member => res.json(member))
@@ -73,6 +70,7 @@ router.get('/count/:id', function(req, res, next) {
 
 // returns info regarding a task given the task name
 router.get('/:id/info', function(req, res, next) {
+  console.log("in tasks info");
   //var user = req.session.user.id;
   let userId = req.params.id;
   let taskname = req.query.taskname;
@@ -81,12 +79,12 @@ router.get('/:id/info', function(req, res, next) {
     .select('tasks.id as taskId', 'status.name as statusName', 'frequency_id','reward', 'status_id','start_date','house_task', 'points', 'tasks_rewards.reward_id as reward_id')
     .innerJoin('status','status.id', 'tasks.status_id')
     .innerJoin('tasks_rewards', 'tasks_rewards.task_id', 'tasks.id')
-    .whereRaw("LOWER(tasks.name) LIKE '%' || LOWER(?) || '%'", taskname)
+    .whereRaw("LOWER(tasks.name) = ?", taskname)
     .andWhere('tasks.user_id', userId)
     .whereIn('status.name', ['Started', 'In progress'])
     .first()
     .then(task => res.json(task))
-  .catch(err => next(err))
+    .catch(err => next(err))
 });
 
 //Add to completed_count when a task is complete

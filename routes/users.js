@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 passport.use(new AmazonStrategy({
     clientID: 'amzn1.application-oa2-client.c7b9f74d21e541a1bafeef9d840f751b',
     clientSecret: 'caf34051ce6b53faae20f5f547472709629e75fbc2347034286746f98707188a',
-    callbackURL: `${process.env.SERVER_URL}/users/auth/amazon/callback`
+    callbackURL: `${process.env.SERVER_URL}:3002/users/auth/amazon/callback`
   },
   function(accessToken, refreshToken, profile, done) {
     var email = profile._json.email;
@@ -65,13 +65,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}:3000/`, failureRedirect: `${process.env.SERVER_URL}/`})
+  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}:3000/`, failureRedirect: `${process.env.SERVER_URL}:3002/`})
 );
-
-router.get('/login', function(req,res){
-  console.log("in login", req.session)
-  res.json({user_id: 'hghjgh'})
-})
-
 
 module.exports = router;

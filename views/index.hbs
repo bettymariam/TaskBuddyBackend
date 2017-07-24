@@ -4,21 +4,29 @@
     <div class="navbar navbar-static-top">
 
     </div>
-
   </header>
   <section class="login-inner">
     <div class="login-middle">
       <div class="login-details">
         <form>
           <h2>Log In</h2>
+          <div><p>Sign in with your Amazon account</p>
+            <!-- <form action="/users/auth/amazon"> -->
+              <a class="btn btn-link" href= "/users/auth/amazon" id="LoginWithAmazon" ><img alt="Login with Amazon" src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png" width="156" height="32"></a>
+            <!-- </form> -->
+          </div>
+          <hr />
           <label>
-            <input type="text" placeholder="Email address"/>
+            <div class="input-group">
+              <span class="input-group-addon" aria-hidden="true"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" placeholder="Email address"/>
+            </div>
           </label>
           <label>
-            <input type="text" placeholder="Phone Number"/>
-          </label>
-          <label>
-            <input type="password" placeholder="Password"/>
+            <div class="input-group">
+              <span class="input-group-addon" aria-hidden="true"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" placeholder="Password"/>
+            </div>
           </label>
           <label>
             <input type="checkbox"/><span>Remember me</span>
@@ -26,35 +34,14 @@
           <div class="btn-sub">
             <button class="pink-btn">Log In</button>
             <span>
-              <a href="#">Forget your password?</a>
+              <a href="#" class="login-link">Sign up</a>
+            </span>
+            <span>
+              <a href="#" class="login-link">Forget your password?</a>
             </span>
           </div>
-
         </form>
-        <form action="/users/auth/amazon">
-          <button class="primary" id="LoginWithAmazon" onclick="login()"><img alt="Login with Amazon" src="http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png" width="156" height="32"></button>
-        </form>
-        </button>
       </div>
-<!-- <div class="custom_body">
-   <h1>Task Buddy</h1>
-    <div class="container">
-    	<div class="row">
-    	    <div class="login_box">
-    	        <section class="main-box">
-        	        <form>
-        	        <div class="input-box">
-            	        <span class="input-group-addon i_icon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="email" type="text" class="form-control input_layout" name="email" placeholder="Email">
-                    </div>
-                    <div class="input-box">
-            	         <span class="input-group-addon i_icon"><i class="glyphicon glyphicon-lock"></i></span>
-                         <input id="password" type="password" class="form-control input_layout" name="password" placeholder="Password">
-                    </div>
-                    </form>
-                    <button type="button" class="btn btn-default btn_style">LOGIN</button>
-                </section>
-    	    </div>
-    	</div>
     </div>
-</div> -->
+  </section>
+</div>
