@@ -30,7 +30,14 @@ exports.seed = function(knex, Promise) {
            reward_id: 1,
            created_at: new Date('2017-07-11 14:26:16 UTC'),
            updated_at: new Date('2017-07-11 14:26:16 UTC')
-          }
+          },
+          {
+            id: 5,
+            task_id: 6,
+            reward_id: 4,
+            created_at: new Date('2017-07-11 14:26:16 UTC'),
+            updated_at: new Date('2017-07-11 14:26:16 UTC')
+           }
       ]);
     })
     .then(() => {

@@ -44,7 +44,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 4,
-          name: "One hour of Math",
+          name: "Math homework",
           user_id: 1,
           frequency_id: 1,
           reward: true,
@@ -61,6 +61,19 @@ exports.seed = function(knex, Promise) {
           user_id: 1,
           frequency_id: 1,
           reward: true,
+          status_id: 1,
+          start_date: '2017-07-11',
+          points: 5,
+          house_task: true,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+        },
+        {
+          id: 6,
+          name: "Finish capstone presentation",
+          user_id: 1,
+          frequency_id: 4,
+          reward: false,
           status_id: 1,
           start_date: '2017-07-11',
           points: 5,
