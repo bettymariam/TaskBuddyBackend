@@ -58,55 +58,63 @@ exports.seed = function(knex, Promise) {
           completed_count: 1,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
-         },
-         {
-           id: 8,
-           task_id: 4,
-           member_id: 3,
-           completed_count: 1,
-           created_at: new Date('2017-07-11 14:26:16 UTC'),
-           updated_at: new Date('2017-07-11 14:26:16 UTC')
-         },
-         {
-           id: 9,
-           task_id: 4,
-           member_id: 4,
-           completed_count: 1,
-           created_at: new Date('2017-07-11 14:26:16 UTC'),
-           updated_at: new Date('2017-07-11 14:26:16 UTC')
-          },
-          {
-            id: 10,
-            task_id: 5,
-            member_id: 1,
-            completed_count: 1,
-            created_at: new Date('2017-07-11 14:26:16 UTC'),
-            updated_at: new Date('2017-07-11 14:26:16 UTC')
-           },
-           {
-             id: 11,
-             task_id: 5,
-             member_id: 2,
-             completed_count: 1,
-             created_at: new Date('2017-07-11 14:26:16 UTC'),
-             updated_at: new Date('2017-07-11 14:26:16 UTC')
-            },
-            {
-              id: 12,
-              task_id: 5,
-              member_id: 3,
-              completed_count: 1,
-              created_at: new Date('2017-07-11 14:26:16 UTC'),
-              updated_at: new Date('2017-07-11 14:26:16 UTC')
-             },
-             {
-               id: 13,
-               task_id: 5,
-               member_id: 4,
-               completed_count: 1,
-               created_at: new Date('2017-07-11 14:26:16 UTC'),
-               updated_at: new Date('2017-07-11 14:26:16 UTC')
-              }
+       },
+       {
+         id: 8,
+         task_id: 4,
+         member_id: 3,
+         completed_count: 1,
+         created_at: new Date('2017-07-11 14:26:16 UTC'),
+         updated_at: new Date('2017-07-11 14:26:16 UTC')
+       },
+       {
+         id: 9,
+         task_id: 4,
+         member_id: 4,
+         completed_count: 1,
+         created_at: new Date('2017-07-11 14:26:16 UTC'),
+         updated_at: new Date('2017-07-11 14:26:16 UTC')
+        },
+        {
+          id: 10,
+          task_id: 5,
+          member_id: 1,
+          completed_count: 1,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+        },
+       {
+         id: 11,
+         task_id: 5,
+         member_id: 2,
+         completed_count: 1,
+         created_at: new Date('2017-07-11 14:26:16 UTC'),
+         updated_at: new Date('2017-07-11 14:26:16 UTC')
+        },
+        {
+          id: 12,
+          task_id: 5,
+          member_id: 3,
+          completed_count: 1,
+          created_at: new Date('2017-07-11 14:26:16 UTC'),
+          updated_at: new Date('2017-07-11 14:26:16 UTC')
+       },
+       {
+         id: 13,
+         task_id: 5,
+         member_id: 4,
+         completed_count: 1,
+         created_at: new Date('2017-07-11 14:26:16 UTC'),
+         updated_at: new Date('2017-07-11 14:26:16 UTC')
+       },
+       {
+         id: 14,
+         task_id: 6,
+         member_id: 1,
+         completed_count: 0,
+         created_at: new Date('2017-07-11 14:26:16 UTC'),
+         updated_at: new Date('2017-07-11 14:26:16 UTC')
+        }
       ]);
     })
     .then(() => {
