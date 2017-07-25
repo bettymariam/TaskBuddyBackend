@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('tasks').insert([{
           id: 1,
-          name: "Vaccum the carpets",
+          name: "Vacuum the carpets",
           user_id: 1,
           frequency_id: 2,
           reward: true,
