@@ -39,10 +39,11 @@ router.post('/:id', function(req, res, next) {
     description: req.body.description,
     category: req.body.category,
     member_id: req.body.member_id,
+    user_id: userId,
     completed_date: new Date()
   }
 
-  knex('rewards')
+  knex('activities')
     .insert(newActivity)
     .returning('*')
     .then(activity => res.json(activity))
