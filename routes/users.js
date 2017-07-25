@@ -65,7 +65,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: `${process.env.SERVER_URL}/`, failureRedirect: `${process.env.SERVER_URL}/`})
+  passport.authenticate('amazon', { successRedirect: `http://ec2-34-198-223-197.compute-1.amazonaws.com:3000/`, failureRedirect: `${process.env.SERVER_URL}/`})
 );
 
 module.exports = router;
