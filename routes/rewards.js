@@ -36,7 +36,7 @@ router.post('/claim', function(req, res, next) {
 router.post('/:id', function(req, res, next) {
   var userId = req.params.id;
   var newReward = {
-    name : req.body.name,
+    description : req.body.name,
     points_needed : req.body.points_needed
   }
 

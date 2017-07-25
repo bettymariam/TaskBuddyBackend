@@ -29,7 +29,7 @@ router.get('/:id', function(req, res, next) {
   const id = req.params.id;
   const task_details = {};
   knex('tasks')
-    .select('tasks.id','tasks.name as task_name','frequency.name as frequency_name','status.name as status_name','start_date','tasks.points', 'tasks.reward', 'rewards.id as reward_id','rewards.name as reward_name', 'rewards.points_needed')
+    .select('tasks.id','tasks.name as task_name','frequency.name as frequency_name','status.name as status_name','start_date','tasks.points', 'tasks.reward', 'rewards.id as reward_id','rewards.description as reward_name', 'rewards.points_needed')
     .innerJoin('tasks_rewards', 'tasks_rewards.id', 'tasks.id')
     .innerJoin('rewards', 'rewards.id', 'tasks_rewards.reward_id')
     .innerJoin('frequency','frequency.id','tasks.frequency_id')

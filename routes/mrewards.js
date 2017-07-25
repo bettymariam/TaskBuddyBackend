@@ -57,4 +57,17 @@ router.post('/:id/claim', function(req, res, next) {
   .catch(err => next(err))
 });
 
+router.delete('/:id', function(req, res, next) {
+  let userId = req.params.id;
+  let mrewardsId = req.query.mrewards_id;
+
+  knex('mrewards')
+    .where('user_id', userId)
+    .andWhere('id', mrewardsId)
+    .delete()
+    .returning('*')
+    .then(reward => res.json(reward))
+    .catch(err => next(err))
+});
+
 module.exports = router;

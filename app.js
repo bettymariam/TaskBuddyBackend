@@ -12,6 +12,7 @@ var members = require('./routes/members');
 var tasks = require('./routes/tasks');
 var rewards = require('./routes/rewards');
 var mrewards = require('./routes/mrewards');
+var activities = require('./routes/activities');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/tasks', tasks);
 app.use('/members', members);
 app.use('/rewards', rewards);
 app.use('/mrewards', mrewards);
+app.use('/activities', activities);
 
 // app.use('*', function(req, res) {
 //   res.sendFile('index.html')
