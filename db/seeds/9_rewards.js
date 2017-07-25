@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
         },
         {
            id: 3,
-           description: "Good going, you've earned a Netflix movie",
+           description: "Good going, you have earned a Netflix movie",
            points_needed: 15,
            created_at: new Date('2017-07-11 14:26:16 UTC'),
            updated_at: new Date('2017-07-11 14:26:16 UTC')

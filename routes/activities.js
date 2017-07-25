@@ -7,7 +7,8 @@ router.get('/:id', function(req, res, next) {
   let userId = req.params.id;
 
   knex('activities')
-    .where('user_id', userId)
+    .innerJoin('members', 'members.id', 'activities.member_id')
+    .where('activities.user_id', userId)
     .then(activities => res.json(activities))
   .catch(err => next(err))
 });
