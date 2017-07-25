@@ -73,11 +73,11 @@ exports.seed = function(knex, Promise) {
           name: "Finish capstone presentation",
           user_id: 1,
           frequency_id: 4,
-          reward: false,
+          reward: true,
           status_id: 1,
           start_date: '2017-07-11',
           points: 5,
-          house_task: true,
+          house_task: false,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
          }

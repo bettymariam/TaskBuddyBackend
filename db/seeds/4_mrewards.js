@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       return knex('mrewards').insert([{
           id: 1,
           user_id: 1,
-          description: "Good start",
+          description: "Good start, you get a five minute massage",
           points_needed: 5,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
@@ -14,7 +14,7 @@ exports.seed = function(knex, Promise) {
        {
           id: 2,
           user_id: 1,
-          description: "Keep up the good work!",
+          description: "Keep up the good work! You get candy!",
           points_needed: 10,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')

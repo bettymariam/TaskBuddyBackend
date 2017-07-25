@@ -32,7 +32,37 @@ exports.seed = function(knex, Promise) {
           completed_date: '2017-07-20',
           created_at: new Date('2017-07-20 14:26:16 UTC'),
           updated_at: new Date('2017-07-20 14:26:16 UTC')
-        }
+        },
+        {
+          id: 4,
+          description: "Math Homework",
+          category: "task",
+          member_id: 3,
+          user_id: 1,
+          completed_date: '2017-07-20',
+          created_at: new Date('2017-07-20 14:26:16 UTC'),
+          updated_at: new Date('2017-07-20 14:26:16 UTC')
+         },
+         {
+           id: 5,
+           description: "Math Homework",
+           category: "task",
+           member_id: 4,
+           user_id: 1,
+           completed_date: '2017-07-20',
+           created_at: new Date('2017-07-20 14:26:16 UTC'),
+           updated_at: new Date('2017-07-20 14:26:16 UTC')
+          },
+          {
+            id: 6,
+            description: "Vacuum the carpets",
+            category: "task",
+            member_id: 2,
+            user_id: 1,
+            completed_date: '2017-07-20',
+            created_at: new Date('2017-07-20 14:26:16 UTC'),
+            updated_at: new Date('2017-07-20 14:26:16 UTC')
+           },
       ]);
     })
     .then(() => {
