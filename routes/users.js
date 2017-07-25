@@ -65,7 +65,7 @@ router.get('/auth/amazon',
   passport.authenticate('amazon', { scope: 'profile'}));
 
 router.get('/auth/amazon/callback',
-  passport.authenticate('amazon', { successRedirect: `http:////yourtaskbuddy.herokuapp.com//`, failureRedirect: `https://yourtaskbuddyapi.herokuapp.com/`})
+  passport.authenticate('amazon', { successRedirect: `http://yourtaskbuddy.herokuapp.com//`, failureRedirect: `https://yourtaskbuddyapi.herokuapp.com/`})
 );
 
 module.exports = router;
