@@ -70,7 +70,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 6,
-          name: "Finish capstone presentation",
+          name: "Capstone presentation",
           user_id: 1,
           frequency_id: 4,
           reward: true,
