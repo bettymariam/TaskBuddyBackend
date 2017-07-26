@@ -74,6 +74,7 @@ router.get('/:id/info', function(req, res, next) {
   //var user = req.session.user.id;
   let userId = req.params.id;
   let taskname = req.query.taskname;
+  console.log("task name", taskname);
 
   knex('tasks')
     .select('tasks.id as taskId', 'status.name as statusName', 'frequency_id','reward', 'status_id','start_date','house_task', 'points', 'tasks_rewards.reward_id as reward_id')
@@ -82,8 +83,7 @@ router.get('/:id/info', function(req, res, next) {
     .whereRaw("LOWER(tasks.name) = ?", taskname)
     .andWhere('tasks.user_id', userId)
     .whereIn('status.name', ['Started', 'In progress'])
-    .first()
-    .then(task => res.json(task))
+    .then(task => res.json(task[0]))
     .catch(err => next(err))
 });
 

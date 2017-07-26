@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
         {
            id: 3,
            user_id: 1,
-           description: "Keep up the good work!",
+           description: "Keep up the good work!You get an hour of uninterrupted TV time",
            points_needed: 20,
            created_at: new Date('2017-07-11 14:26:16 UTC'),
            updated_at: new Date('2017-07-11 14:26:16 UTC')
