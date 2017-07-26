@@ -16,7 +16,6 @@ router.get('/tasks/:id', function(req, res, next) {
   //var user = req.session.user.id;
   let id = req.params.id;
   let name = req.query.name;
-  console.log(id);
 
   knex('members')
     .select('members.name as membername', 'tasks.name as taskname', 'frequency.name as frequencyname', 'status.name as statusname')

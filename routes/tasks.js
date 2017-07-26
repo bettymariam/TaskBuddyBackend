@@ -70,11 +70,9 @@ router.get('/count/:id', function(req, res, next) {
 
 // returns info regarding a task given the task name
 router.get('/:id/info', function(req, res, next) {
-  console.log("in tasks info");
   //var user = req.session.user.id;
   let userId = req.params.id;
   let taskname = req.query.taskname;
-  console.log("task name", taskname);
 
   knex('tasks')
     .select('tasks.id as taskId', 'status.name as statusName', 'frequency_id','reward', 'status_id','start_date','house_task', 'points', 'tasks_rewards.reward_id as reward_id')
@@ -89,7 +87,6 @@ router.get('/:id/info', function(req, res, next) {
 
 //Add to completed_count when a task is complete
 router.post('/:id/completed', function(req, res, next) {
-  console.log("in completed");
   var memberId =req.query.member_id
   let taskId = req.query.task_id;
 

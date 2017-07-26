@@ -19,7 +19,6 @@ router.get('/eligible', function(req, res, next) {
 });
 
 router.post('/claim', function(req, res, next) {
-  console.log("in claim");
   var newReward = {
     member_id: req.query.member_id,
     reward_id: req.query.reward_id

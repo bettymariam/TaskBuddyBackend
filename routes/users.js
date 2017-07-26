@@ -5,7 +5,6 @@ var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var AmazonStrategy = require('passport-amazon').Strategy;
 var knex = require('../db');
 var cookieParser = require('cookie-parser');
-console.log(process.env.SERVER_URL);
 
 router.get('/', function(req, res, next) {
   knex('users')
@@ -22,29 +21,28 @@ passport.use(new AmazonStrategy({
     var email = profile._json.email;
     var username = profile._json.name;
 
-  knex('users')
-    .select('*')
-    .where({email})
-    .then(user => {
-      console.log("user", user);
-      let new_user = {
-        username: username,
-        email: email,
-        refresh_token: refreshToken
-      }
-      if (user.length === 0){
-        knex('users')
-          .insert(new_user)
-          .returning('*')
-          .then(user => {
-            return done(null, user)
-          })
-          .catch(err => console.log(err))
-      } else {
-        return done(null, user)
-      }
-    })
-    .catch(err => console.log(err))
+    knex('users')
+      .select('*')
+      .where({email})
+      .then(user => {
+        let new_user = {
+          username: username,
+          email: email,
+          refresh_token: refreshToken
+        }
+        if (user.length === 0){
+          knex('users')
+            .insert(new_user)
+            .returning('*')
+            .then(user => {
+              return done(null, user)
+            })
+            .catch(err => console.log(err))
+        } else {
+          return done(null, user)
+        }
+      })
+      .catch(err => console.log(err))
   }
 ));
 
@@ -53,7 +51,6 @@ router.use(passport.session());
 router.use(cookieParser());
 
 passport.serializeUser((object, done) => {
-  console.log("in Serialize", object);
   done(null, {token : object.token});
 })
 
