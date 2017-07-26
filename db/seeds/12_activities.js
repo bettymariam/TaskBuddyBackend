@@ -9,9 +9,9 @@ exports.seed = function(knex, Promise) {
           category: "task",
           member_id: 1,
           user_id: 1,
-          completed_date: '2017-07-20 14:26:16 UTC',
-          created_at: new Date('2017-07-20 14:26:16 UTC'),
-          updated_at: new Date('2017-07-20 14:26:16 UTC')
+          completed_date: '2017-07-23 14:26:16 UTC',
+          created_at: new Date('2017-07-23 14:26:16 UTC'),
+          updated_at: new Date('2017-07-23 14:26:16 UTC')
        },
        {
          id: 2,
@@ -19,9 +19,9 @@ exports.seed = function(knex, Promise) {
          category: "reward",
          member_id: 2,
          user_id: 1,
-         completed_date: '2017-07-20 14:26:16 UTC',
-         created_at: new Date('2017-07-20 14:26:16 UTC'),
-         updated_at: new Date('2017-07-20 14:26:16 UTC')
+         completed_date: '2017-07-24 14:26:16 UTC',
+         created_at: new Date('2017-07-24 14:26:16 UTC'),
+         updated_at: new Date('2017-07-24 14:26:16 UTC')
         },
         {
           id: 3,
@@ -29,9 +29,9 @@ exports.seed = function(knex, Promise) {
           category: "mreward",
           member_id: 3,
           user_id: 1,
-          completed_date: '2017-07-20',
-          created_at: new Date('2017-07-20 14:26:16 UTC'),
-          updated_at: new Date('2017-07-20 14:26:16 UTC')
+          completed_date: '2017-07-25',
+          created_at: new Date('2017-07-25 14:26:16 UTC'),
+          updated_at: new Date('2017-07-25 14:26:16 UTC')
         },
           {
             id: 4,
@@ -39,9 +39,9 @@ exports.seed = function(knex, Promise) {
             category: "task",
             member_id: 2,
             user_id: 1,
-            completed_date: '2017-07-20',
-            created_at: new Date('2017-07-20 14:26:16 UTC'),
-            updated_at: new Date('2017-07-20 14:26:16 UTC')
+            completed_date: '2017-07-25',
+            created_at: new Date('2017-07-25 14:26:16 UTC'),
+            updated_at: new Date('2017-07-25 14:26:16 UTC')
            }
       ]);
     })
