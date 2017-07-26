@@ -20,7 +20,8 @@
     "passport": "^0.3.2",
     "passport-amazon": "^1.0.0",
     "passport-oauth": "^1.0.0",
-    "pg": "^6.4.0"
+    "pg": "^6.4.0",
+    "serve-favicon": "^2.4.3"
   },
   "devDependencies": {
     "morgan": "^1.8.2",
