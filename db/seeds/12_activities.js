@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('activities').insert([{
           id: 1,
-          description: "20 minutes of yoga",
+          description: "Twenty minutes of yoga",
           category: "task",
           member_id: 1,
           user_id: 1,
@@ -33,16 +33,26 @@ exports.seed = function(knex, Promise) {
           created_at: new Date('2017-07-25 14:26:16 UTC'),
           updated_at: new Date('2017-07-25 14:26:16 UTC')
         },
-          {
-            id: 4,
-            description: "Vacuum the carpets",
-            category: "task",
-            member_id: 2,
-            user_id: 1,
-            completed_date: '2017-07-25',
-            created_at: new Date('2017-07-25 14:26:16 UTC'),
-            updated_at: new Date('2017-07-25 14:26:16 UTC')
-           }
+        {
+          id: 4,
+          description: "Vacuum the carpets",
+          category: "task",
+          member_id: 2,
+          user_id: 1,
+          completed_date: '2017-07-25',
+          created_at: new Date('2017-07-25 14:26:16 UTC'),
+          updated_at: new Date('2017-07-25 14:26:16 UTC')
+         },
+         {
+           id: 5,
+           description: "Twenty minutes of yoga",
+           category: "task",
+           member_id: 2,
+           user_id: 1,
+           completed_date: '2017-07-26',
+           created_at: new Date('2017-07-26 06:26:16 UTC'),
+           updated_at: new Date('2017-07-26 06:26:16 UTC')
+          }
       ]);
     })
     .then(() => {

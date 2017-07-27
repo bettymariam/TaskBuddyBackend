@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
        },
        {
          id: 2,
-         name: "twenty minutes of yoga",
+         name: "Twenty minutes of yoga",
          user_id: 1,
          frequency_id: 1,
          reward: true,
