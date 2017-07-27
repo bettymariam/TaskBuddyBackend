@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
           id: 5,
           task_id: 2,
           member_id: 1,
-          completed_count: 0,
+          completed_count: 2,
           created_at: new Date('2017-07-11 14:26:16 UTC'),
           updated_at: new Date('2017-07-11 14:26:16 UTC')
         },
