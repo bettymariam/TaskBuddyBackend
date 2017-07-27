@@ -29,9 +29,9 @@ exports.seed = function(knex, Promise) {
           category: "mreward",
           member_id: 3,
           user_id: 1,
-          completed_date: '2017-07-25',
-          created_at: new Date('2017-07-25 14:26:16 UTC'),
-          updated_at: new Date('2017-07-25 14:26:16 UTC')
+          completed_date: '2017-07-25 06:26:16 UTC',
+          created_at: new Date('2017-07-25 06:26:16 UTC'),
+          updated_at: new Date('2017-07-25 06:26:16 UTC')
         },
         {
           id: 4,
@@ -39,9 +39,9 @@ exports.seed = function(knex, Promise) {
           category: "task",
           member_id: 1,
           user_id: 1,
-          completed_date: '2017-07-25',
-          created_at: new Date('2017-07-25 14:26:16 UTC'),
-          updated_at: new Date('2017-07-25 14:26:16 UTC')
+          completed_date: '2017-07-25 16:26:16 UTC',
+          created_at: new Date('2017-07-25 16:26:16 UTC'),
+          updated_at: new Date('2017-07-25 16:26:16 UTC')
          },
          {
            id: 5,
@@ -49,9 +49,9 @@ exports.seed = function(knex, Promise) {
            category: "task",
            member_id: 1,
            user_id: 1,
-           completed_date: '2017-07-27',
-           created_at: new Date('2017-07-27 05:26:16 UTC'),
-           updated_at: new Date('2017-07-27 05:26:16 UTC')
+           completed_date: '2017-07-27 06:26:16 UTC',
+           created_at: new Date('2017-07-27 06:26:16 UTC'),
+           updated_at: new Date('2017-07-27 06:26:16 UTC')
           }
       ]);
     })
