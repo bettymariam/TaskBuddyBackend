@@ -26,7 +26,7 @@ exports.seed = function(knex, Promise) {
          },
          {
             id: 4,
-            description: "You are awesome, now go get a job!",
+            description: "You are awesome, now let's find a job!",
             points_needed: 5,
             created_at: new Date('2017-07-11 14:26:16 UTC'),
             updated_at: new Date('2017-07-11 14:26:16 UTC')
