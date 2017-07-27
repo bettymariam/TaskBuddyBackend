@@ -62,6 +62,10 @@ button {
     margin-top: 24px;
 }
 
+.logo-image {
+  height: 50px;
+  width: 50px;
+}
 
 /* Login Page */
 .dark-header {background: #f2f0f1;}
