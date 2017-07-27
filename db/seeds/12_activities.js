@@ -50,8 +50,8 @@ exports.seed = function(knex, Promise) {
            member_id: 1,
            user_id: 1,
            completed_date: '2017-07-27',
-           created_at: new Date('2017-07-27 06:26:16 UTC'),
-           updated_at: new Date('2017-07-27 06:26:16 UTC')
+           created_at: new Date('2017-07-27 05:26:16 UTC'),
+           updated_at: new Date('2017-07-27 05:26:16 UTC')
           }
       ]);
     })
