@@ -1,11 +1,9 @@
-# TaskBuddy <img height="100px" src="./taskbuddy.png" target_blank />
+# TaskBuddy <img height="100px" src="./public/taskbuddy.png" target_blank />
 
 **TaskBuddy**, is a task manager with a built in reward system. This web application was built as the capstone project during my time at a 6 month web immersive program. The back-end was built using Node, Express and PostgreSql. The front-end was built using React and React-Bootstrap. The front-end repo lives here https://github.com/bettymariam/TaskBuddyFrontEnd
 
 The companion Alexa skill was built using AWS Lambda and Alexa developer console. At this point, the Alexa skill has not been published and lives in my developer account for demo purposes only.
 
-## Browser compatibility
-- Should be good in latest Firefox, Chrome, and Safari; but not IE.
 
 ## Setup
 
