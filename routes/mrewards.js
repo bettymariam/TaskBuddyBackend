@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db')
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   knex('mrewards')
     .then(reward => res.json(reward))

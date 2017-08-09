@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db')
 
-/* GET users listing. */
 router.get('/:id', function(req, res, next) {
   let userId = req.params.id;
 
