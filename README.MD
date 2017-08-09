@@ -4,7 +4,6 @@
 
 The companion Alexa skill was built using AWS Lambda and Alexa developer console. At this point, the Alexa skill has not been published and lives in my developer account for demo purposes only.
 
-
 ## Setup
 
 To run TaskBuddy locally :
